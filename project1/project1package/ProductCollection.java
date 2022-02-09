@@ -1,10 +1,9 @@
 package project1package;
 
+//import java.util.ArrayList;
+
 public class ProductCollection {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	//private ArrayList <Product> Products = new ArrayList <Product>();
 
 }
