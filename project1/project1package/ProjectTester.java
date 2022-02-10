@@ -1,4 +1,7 @@
 package project1package;
+import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class ProjectTester {
 
@@ -13,9 +16,12 @@ public class ProjectTester {
 //		System.out.println(test.getName());
 //		System.out.println(test.getBrand());
 		
-		//System.out.println(test.toString());
+		
 		myList.addInstrument(test);
 		myList.addInstrument(test2);
+		
+		
+		
 		System.out.println(myList.toString());
 		
 		

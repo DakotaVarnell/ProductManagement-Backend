@@ -1,6 +1,7 @@
 package project1package;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ProductCollection {
 
@@ -30,6 +31,34 @@ public class ProductCollection {
 	public Product findInstrument(Product p)
 	{
 		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public String toString()
+	{
+		Iterator <Product> iter = Products.iterator();
+		String toReturn = "";
+				
+		while(iter.hasNext())
+		{
+			toReturn = iter.next() + "     ";
+		}
+		
+		return toReturn;
 	}
 	
 	//
