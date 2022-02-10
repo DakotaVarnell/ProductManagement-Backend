@@ -9,6 +9,7 @@ public class ProjectTester {
 	{
 		Product test = new Product("22", "Fender", "Stratocaster", 222.0, "Guitar", 2, "File Path");
 		Product test2 = new Product("23", "Fender", "Jazzmaster", 300.0, "Guitar", 2, "File Path");
+		Product test3 = new Product("33", "Gibson", "LesPaul", 300.0, "Guitar", 2, "File Path");
 		ProductCollection myList = new ProductCollection();
 		
 	
@@ -19,6 +20,7 @@ public class ProjectTester {
 		
 		myList.addInstrument(test);
 		myList.addInstrument(test2);
+		myList.addInstrument(test3);
 		
 		
 		

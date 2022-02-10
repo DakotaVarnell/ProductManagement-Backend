@@ -3,10 +3,13 @@ package project1package;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
+
+
 public class ProductCollection {
 
 	private ArrayList <Product> Products;
-	private String filename;
+	private String filename = "";
 
 	
 	//Default constructor
@@ -33,33 +36,26 @@ public class ProductCollection {
 		return null;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public String toString()
 	{
-		Iterator <Product> iter = Products.iterator();
 		String toReturn = "";
-				
+		Iterator<Product> iter = Products.iterator();
+		
 		while(iter.hasNext())
 		{
-			toReturn = iter.next() + "     ";
+			toReturn += iter.next().toString() + "\n";
+			
 		}
 		
 		return toReturn;
 	}
+
+
 	
-	//
+	
+	
+	
+	
+	
+	
 }
