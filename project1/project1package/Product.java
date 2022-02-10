@@ -33,9 +33,8 @@ public class Product{
 		this.quantity = quantity;
 		this.image = image;
 	}
-
 	
-	//Our Getters and Setters
+	//Getters and Setters
 	public String getId() {
 		return id;
 	}
@@ -91,12 +90,13 @@ public class Product{
 	public void setImage(String image) {
 		this.image = image;
 	}
+
+	//To String Method
+	public String toString()
+	{
+		return id+"     "+name+"     "+brand+"     "+cost+"     "+instrType+"     "+quantity+"     "+image;		
+	}
 	
-//	public String toString()
-//	{
-//		return id+"		"+name+"	"+ brand+"	"+cost+"	"+instrType+"	"+quantity+"	"+image;
-//		
-//	}
 	
 	
 }
