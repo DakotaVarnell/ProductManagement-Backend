@@ -105,14 +105,41 @@ public class ProductCollection {
 		}
 	}
 	
-	public Product suggestProduct(Product p)
-	{
-		return null;
-	}
+//	public Product suggestProduct(Product p)
+//	{
+//		return null;
+//	}
 	
 	public ProductCollection suggestCollection(Product p)
 	{
-		return null;
+		Iterator<Product> iter = Products.iterator();
+		ProductCollection toSuggest = new ProductCollection();
+		Product temp = new Product();
+		
+		System.out.println("You might also like:");
+		
+		if(p.getInstrType().equals("Guitar"))
+		{
+			//If guitar suggest picks or strings
+		}
+		else if(p.getInstrType().equals("Amp"))
+		{
+			//If Amp suggest cable
+		}
+		else if(p.getInstrType().equals("Drums"))
+		{
+			//if Drums suggest drumsticks
+		}
+		else if(p.getInstrType().equals("Woodwind"))
+		{
+			//if woodwind suggest reeds
+		}
+		else
+		{
+			//otherwise suggest music stand or metronome
+		}
+		
+		return toSuggest;
 	}
 
 

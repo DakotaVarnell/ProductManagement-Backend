@@ -42,8 +42,12 @@ public class ProjectTester {
 		//Decrease the quantity of an item (Purchase this item)
 		//myList.updateStatus("");
 		
+		//Give the method a product, and then return a list of products
+		//that compliment that product
+		System.out.println(myList.suggestCollection(test2));
+		
 		//Print out the collection again including all changes
-		System.out.println(myList.toString());
+		//System.out.println(myList.toString());
 		
 		
 		
