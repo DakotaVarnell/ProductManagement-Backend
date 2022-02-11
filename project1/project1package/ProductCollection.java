@@ -104,23 +104,28 @@ public class ProductCollection {
 				}
 		}
 	}
-	
-//	public Product suggestProduct(Product p)
-//	{
-//		return null;
-//	}
-	
+
 	public ProductCollection suggestCollection(Product p)
 	{
 		Iterator<Product> iter = Products.iterator();
 		ProductCollection toSuggest = new ProductCollection();
 		Product temp = new Product();
 		
+		System.out.println("Since you enjoyed : " + p.getName() + "     " + p.getBrand());
 		System.out.println("You might also like:");
 		
 		if(p.getInstrType().equals("Guitar"))
 		{
 			//If guitar suggest picks or strings
+			while(iter.hasNext())
+			{
+				temp = iter.next();
+				
+				if(temp.getInstrType().equals("Pick") || temp.getInstrType().equals("Strings"))
+				{
+					toSuggest.addInstrument(temp);
+				}
+			}
 		}
 		else if(p.getInstrType().equals("Amp"))
 		{
