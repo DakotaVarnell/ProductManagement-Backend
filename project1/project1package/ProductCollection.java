@@ -190,7 +190,19 @@ public class ProductCollection {
 		
 		return toSuggest;
 	}
-
+	
+	//Method that allows us to read from a text file and input each line as a new product
+	public void toRead()
+	{
+			System.out.println(filename);
+	}
+		
+	//Method that allows us to write to a text file
+	public void toWrite(String fn)
+	{
+			
+	}
+		
 	//To string method that converts this entire collection into a string
 	public String toString()
 	{

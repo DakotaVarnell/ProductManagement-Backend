@@ -23,7 +23,10 @@ public class ProjectTester {
 		ProductCollection myList = new ProductCollection();
 		
 		//Init with our file name
-		//ProductCollection myList = new ProductCollection("./inventory.txt");
+		//ProductCollection myList = new ProductCollection("./inventoryTest.txt");
+		
+		//read from our txt file
+		//myList.toRead();
 
 		
 		//Check our getters
@@ -64,6 +67,9 @@ public class ProjectTester {
 		
 		//Print out the collection again including all changes
 		//System.out.println(myList.toString());
+		
+		//Write to our text file at end of run
+		//myList.toWrite();
 		
 		
 		

@@ -10,6 +10,7 @@ public class Product{
 	private Integer quantity;
 	private String image;
 	
+	
 	//Default Constructor
 	public Product()
 	{
@@ -20,6 +21,7 @@ public class Product{
 		instrType = "not set";
 		quantity = 0;
 		image = "not set";
+		
 	}
 	
 	//Parameterized Constructor
@@ -91,6 +93,7 @@ public class Product{
 		this.image = image;
 	}
 
+	
 	//To String Method
 	public String toString()
 	{
