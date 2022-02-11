@@ -31,7 +31,86 @@ public class ProductCollection {
 		Products.add(p);
 	}
 	
-	public Product findInstrument(Product p)
+	public Product findInstrument(String id)
+	{
+		Iterator <Product> iter = Products.iterator();
+		Product toReturn = new Product();
+		
+		while(iter.hasNext())
+		{
+			toReturn = iter.next();
+			
+				if(toReturn.getId().equals(id))
+				{
+					return toReturn;
+				}
+			
+		}
+		
+		return toReturn;
+		
+	}
+	
+	public Product updateStatus(String id)
+	{
+		Iterator <Product> iter = Products.iterator();
+		Product toReturn = new Product();
+		
+		while(iter.hasNext())
+		{
+			toReturn = iter.next();
+			
+			if(toReturn.getId().equals(id))
+			{
+				toReturn.setQuantity(toReturn.getQuantity()-1);
+			}
+		}
+		
+		return toReturn;
+	}
+	
+	public ProductCollection retrieveCollection(String type)
+	{
+		Iterator<Product> iter = Products.iterator();
+		ProductCollection toReturn = new ProductCollection();
+		Product temp = new Product();
+		
+		while(iter.hasNext())
+		{
+			temp = iter.next();
+			
+			if(temp.getInstrType().equals(type))
+			{
+				toReturn.addInstrument(temp);
+			}
+		}
+		
+		return toReturn;
+	}
+	
+	public void deleteProduct(String id)
+	{
+		Iterator <Product> iter = Products.iterator();
+		Product toRemove = new Product();
+		
+		while(iter.hasNext())
+		{
+			toRemove = iter.next();
+			
+				if(toRemove.getId().equals(id))
+				{
+					Products.remove(toRemove);
+					break;
+				}
+		}
+	}
+	
+	public Product suggestProduct(Product p)
+	{
+		return null;
+	}
+	
+	public ProductCollection suggestCollection(Product p)
 	{
 		return null;
 	}
