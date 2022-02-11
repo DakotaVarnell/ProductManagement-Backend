@@ -19,7 +19,7 @@ public class ProductCollection {
 		filename = null;
 	}
 	
-	//Parameterized Constructor
+	//Parameterized Constructor, allows us to read and write
 	public ProductCollection(String filename)
 	{
 		this.filename = filename;
@@ -31,6 +31,7 @@ public class ProductCollection {
 		Products.add(p);
 	}
 	
+	//Find new instrument using inputted id
 	public Product findInstrument(String id)
 	{
 		Iterator <Product> iter = Products.iterator();
@@ -51,6 +52,7 @@ public class ProductCollection {
 		
 	}
 	
+	//Update quantity of certain product by using inputted id as if one had been bought
 	public Product updateStatus(String id)
 	{
 		Iterator <Product> iter = Products.iterator();
@@ -69,6 +71,7 @@ public class ProductCollection {
 		return toReturn;
 	}
 	
+	//Return a collection of products by the type of instrument
 	public ProductCollection retrieveCollection(String type)
 	{
 		Iterator<Product> iter = Products.iterator();
@@ -88,6 +91,7 @@ public class ProductCollection {
 		return toReturn;
 	}
 	
+	//delete an entire product as if it wasn't sold anymore
 	public void deleteProduct(String id)
 	{
 		Iterator <Product> iter = Products.iterator();
@@ -105,18 +109,22 @@ public class ProductCollection {
 		}
 	}
 
+	
+	//When the instrument or accessory is being bought, suggest a collection that they may also be interested in
 	public ProductCollection suggestCollection(Product p)
 	{
 		Iterator<Product> iter = Products.iterator();
 		ProductCollection toSuggest = new ProductCollection();
 		Product temp = new Product();
 		
-		System.out.println("Since you enjoyed : " + p.getName() + "     " + p.getBrand());
+		//Title Prompt to tell them what they are looking at
+		System.out.println("Since you enjoyed : " + p.getBrand() + " " + p.getName());
 		System.out.println("You might also like:");
 		
+		//else if chain to determine the type of product that was purchased using input p
 		if(p.getInstrType().equals("Guitar"))
 		{
-			//If guitar suggest picks or strings
+			//If guitar, suggest picks or strings
 			while(iter.hasNext())
 			{
 				temp = iter.next();
@@ -129,25 +137,61 @@ public class ProductCollection {
 		}
 		else if(p.getInstrType().equals("Amp"))
 		{
-			//If Amp suggest cable
+			//If Amp, suggest cable
+			while(iter.hasNext())
+			{
+				temp = iter.next();
+				
+				if(temp.getInstrType().equals("Cable") || temp.getInstrType().equals("Pedal"))
+				{
+					toSuggest.addInstrument(temp);
+				}
+			}
 		}
 		else if(p.getInstrType().equals("Drums"))
 		{
-			//if Drums suggest drumsticks
+			//If Drums, suggest drumsticks
+			while(iter.hasNext())
+			{
+				temp = iter.next();
+				
+				if(temp.getInstrType().equals("Drum Sticks"))
+				{
+					toSuggest.addInstrument(temp);
+				}
+			}
 		}
 		else if(p.getInstrType().equals("Woodwind"))
 		{
-			//if woodwind suggest reeds
+			//If woodwind, suggest reeds
+			while(iter.hasNext())
+			{
+				temp = iter.next();
+				
+				if(temp.getInstrType().equals("Reeds"))
+				{
+					toSuggest.addInstrument(temp);
+				}
+			}
 		}
 		else
 		{
 			//otherwise suggest music stand or metronome
+			while(iter.hasNext())
+			{
+				temp = iter.next();
+				
+				if(temp.getInstrType().equals("Metronome") || temp.getInstrType().equals("Stand"))
+				{
+					toSuggest.addInstrument(temp);
+				}
+			}
 		}
 		
 		return toSuggest;
 	}
 
-
+	//To string method that converts this entire collection into a string
 	public String toString()
 	{
 		String toReturn = "";

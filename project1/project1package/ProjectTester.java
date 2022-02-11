@@ -8,22 +8,30 @@ public class ProjectTester {
 	public static void main(String args[])
 	{
 		
-		//CHANGE THE BRAND AND NAME SWITCH THEM AROUND
-		Product test = new Product("22", "Fender", "Stratocaster", 222.0, "Guitar", 2, "File Path");
-		Product test2 = new Product("23", "Fender", "Jazzmaster", 300.0, "Guitar", 2, "File Path");
-		Product test3 = new Product("33", "Gibson", "LesPaul", 300.0, "Guitar", 2, "File Path");
-		Product test4 = new Product("38", "Fender", "Blues Junior", 400.0, "Amp", 2, "File Path");
-		Product test5 = new Product("36", "Boss", "Katana", 350.0, "Amp", 2, "File Path");
-		Product test6 = new Product("39", "Tortex", "Thin", 7.0, "Pick", 2, "File Path");
-		Product test7 = new Product("42", "Fender", "Heavy Gauge", 12.0, "Strings", 2, "File Path");
+		//Add all of our tester products
+		Product test = new Product("22", "Stratocaster", "Fender", 222.0, "Guitar", 2, "File Path");
+		Product test2 = new Product("23", "Jazzmaster", "Fender", 300.0, "Guitar", 2, "File Path");
+		Product test3 = new Product("33", "Les Paul", "Gibson", 300.0, "Guitar", 2, "File Path");
+		Product test4 = new Product("38", "Blues Junior", "Fender", 400.0, "Amp", 2, "File Path");
+		Product test5 = new Product("36", "Katana", "Boss", 350.0, "Amp", 2, "File Path");
+		Product test6 = new Product("39", "Thin Picks", "Tortex", 7.0, "Pick", 2, "File Path");
+		Product test7 = new Product("42", "Thick Gauge", "Fender", 12.0, "Strings", 2, "File Path");
+		Product test8 = new Product("58", "Tube Screamer", "Ibanez", 12.0, "Pedal", 2, "File Path");
+		Product test9 = new Product("44", "Metronome", "Boss", 12.0, "Metronome", 2, "File Path");
+		
+		//Init our inventory collection class
 		ProductCollection myList = new ProductCollection();
 		
-	
+		//Init with our file name
+		//ProductCollection myList = new ProductCollection("./inventory.txt");
+
+		
+		//Check our getters
 //		System.out.println(test.getId());
 //		System.out.println(test.getName());
 //		System.out.println(test.getBrand());
 		
-		
+		//add all the products to the product collection myList
 		myList.addInstrument(test);
 		myList.addInstrument(test2);
 		myList.addInstrument(test3);
@@ -31,6 +39,8 @@ public class ProjectTester {
 		myList.addInstrument(test5);
 		myList.addInstrument(test6);
 		myList.addInstrument(test7);
+		myList.addInstrument(test8);
+		myList.addInstrument(test9);
 		
 		
 		//Print out the string representation of our collection
@@ -50,7 +60,7 @@ public class ProjectTester {
 		
 		//Give the method a product, and then return a list of products
 		//that compliment that product
-		System.out.println(myList.suggestCollection(test));
+		System.out.println(myList.suggestCollection(test2));
 		
 		//Print out the collection again including all changes
 		//System.out.println(myList.toString());
