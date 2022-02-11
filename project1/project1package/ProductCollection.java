@@ -1,5 +1,9 @@
 package project1package;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -44,6 +48,10 @@ public class ProductCollection {
 				if(toReturn.getId().equals(id))
 				{
 					return toReturn;
+				}
+				else if(iter.hasNext() != true)
+				{
+						System.out.println("Item not Found: ");
 				}
 			
 		}
@@ -129,7 +137,7 @@ public class ProductCollection {
 			{
 				temp = iter.next();
 				
-				if(temp.getInstrType().equals("Pick") || temp.getInstrType().equals("Strings"))
+				if(temp.getInstrType().equals("Picks") || temp.getInstrType().equals("Strings"))
 				{
 					toSuggest.addInstrument(temp);
 				}
@@ -194,7 +202,32 @@ public class ProductCollection {
 	//Method that allows us to read from a text file and input each line as a new product
 	public void toRead()
 	{
-			System.out.println(filename);
+		
+			
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(filename));
+				String line;
+				ArrayList temp = new ArrayList();
+				
+				
+				while((line = reader.readLine()) != null)
+				{
+					//System.out.println(line);
+					String[] tokens = line.split(",");
+					Product p = new Product(tokens[0], tokens[1], tokens[2], Double.parseDouble(tokens[3]),tokens[4], Integer.parseInt(tokens[5]),tokens[6]);
+					temp.add(p);
+					
+				}
+				
+				Products = temp;
+				
+				reader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+
+
 	}
 		
 	//Method that allows us to write to a text file

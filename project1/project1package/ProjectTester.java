@@ -19,14 +19,14 @@ public class ProjectTester {
 		Product test8 = new Product("58", "Tube Screamer", "Ibanez", 12.0, "Pedal", 2, "File Path");
 		Product test9 = new Product("44", "Metronome", "Boss", 12.0, "Metronome", 2, "File Path");
 		
-		//Init our inventory collection class
-		ProductCollection myList = new ProductCollection();
+		//Init our inventory collection class with no parameters
+		//ProductCollection myList = new ProductCollection();
 		
 		//Init with our file name
-		//ProductCollection myList = new ProductCollection("./inventoryTest.txt");
+		ProductCollection myList = new ProductCollection("C:\\Users\\varne\\git\\Project1Repo\\project1\\project1package\\inventoryTest.txt");
 		
 		//read from our txt file
-		//myList.toRead();
+		myList.toRead();
 
 		
 		//Check our getters
@@ -34,38 +34,41 @@ public class ProjectTester {
 //		System.out.println(test.getName());
 //		System.out.println(test.getBrand());
 		
-		//add all the products to the product collection myList
-		myList.addInstrument(test);
-		myList.addInstrument(test2);
-		myList.addInstrument(test3);
-		myList.addInstrument(test4);
-		myList.addInstrument(test5);
-		myList.addInstrument(test6);
-		myList.addInstrument(test7);
-		myList.addInstrument(test8);
-		myList.addInstrument(test9);
-		
+		//add all the products to the product collection myList manually
+//		myList.addInstrument(test);
+//		myList.addInstrument(test2);
+//		myList.addInstrument(test3);
+//		myList.addInstrument(test4);
+//		myList.addInstrument(test5);
+//		myList.addInstrument(test6);
+//		myList.addInstrument(test7);
+//		myList.addInstrument(test8);
+//		myList.addInstrument(test9);
+//		
 		
 		//Print out the string representation of our collection
 		System.out.println(myList.toString());
 		
 		//Print out an instrument found using its id
-		//System.out.println(myList.findInstrument("33"));
+		//System.out.println(myList.findInstrument("7"));
 		
 		//Delete a product according to its id
-		//myList.deleteProduct("23");
+		//myList.deleteProduct("71");
 		
 		//Finds a collection of items
 		//System.out.println(myList.retrieveCollection("Guitar"));
 		
 		//Decrease the quantity of an item (Purchase this item)
-		//myList.updateStatus("");
+		//myList.updateStatus("12");
 		
 		//Give the method a product, and then return a list of products
 		//that compliment that product
-		System.out.println(myList.suggestCollection(test2));
+		//System.out.println(myList.suggestCollection(test2));
 		
 		//Print out the collection again including all changes
+		//System.out.println(myList.toString());
+		
+		//Print out the entire collection
 		//System.out.println(myList.toString());
 		
 		//Write to our text file at end of run
