@@ -63,16 +63,16 @@ public class ProjectTester {
 		
 		//Give the method a product, and then return a list of products
 		//that compliment that product
-		//System.out.println(myList.suggestCollection(test2));
+		System.out.println(myList.suggestCollection(test2));
 		
 		//Print out the collection again including all changes
 		//System.out.println(myList.toString());
 		
 		//Print out the entire collection
-		//System.out.println(myList.toString());
+		System.out.println(myList.toString());
 		
 		//Write to our text file at end of run
-		//myList.toWrite();
+		myList.toWrite();
 		
 		
 		

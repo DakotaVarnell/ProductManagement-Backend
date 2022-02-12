@@ -1,8 +1,10 @@
 package project1package;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,14 +14,14 @@ import java.util.Iterator;
 
 public class ProductCollection {
 
-	private ArrayList <Product> Products;
+	private ArrayList <Product> products;
 	private String filename = "";
 
 	
 	//Default constructor
 	public ProductCollection()
 	{
-		Products = new ArrayList<Product>();
+		products = new ArrayList<Product>();
 		filename = null;
 	}
 	
@@ -32,13 +34,13 @@ public class ProductCollection {
 	//Add new Instrument to our collection
 	public void addInstrument(Product p)
 	{
-		Products.add(p);
+		products.add(p);
 	}
 	
 	//Find new instrument using inputted id
 	public Product findInstrument(String id)
 	{
-		Iterator <Product> iter = Products.iterator();
+		Iterator <Product> iter = products.iterator();
 		Product toReturn = new Product();
 		
 		while(iter.hasNext())
@@ -63,7 +65,7 @@ public class ProductCollection {
 	//Update quantity of certain product by using inputted id as if one had been bought
 	public Product updateStatus(String id)
 	{
-		Iterator <Product> iter = Products.iterator();
+		Iterator <Product> iter = products.iterator();
 		Product toReturn = new Product();
 		
 		while(iter.hasNext())
@@ -82,7 +84,7 @@ public class ProductCollection {
 	//Return a collection of products by the type of instrument
 	public ProductCollection retrieveCollection(String type)
 	{
-		Iterator<Product> iter = Products.iterator();
+		Iterator<Product> iter = products.iterator();
 		ProductCollection toReturn = new ProductCollection();
 		Product temp = new Product();
 		
@@ -102,7 +104,7 @@ public class ProductCollection {
 	//delete an entire product as if it wasn't sold anymore
 	public void deleteProduct(String id)
 	{
-		Iterator <Product> iter = Products.iterator();
+		Iterator <Product> iter = products.iterator();
 		Product toRemove = new Product();
 		
 		while(iter.hasNext())
@@ -111,7 +113,7 @@ public class ProductCollection {
 			
 				if(toRemove.getId().equals(id))
 				{
-					Products.remove(toRemove);
+					products.remove(toRemove);
 					break;
 				}
 		}
@@ -121,7 +123,7 @@ public class ProductCollection {
 	//When the instrument or accessory is being bought, suggest a collection that they may also be interested in
 	public ProductCollection suggestCollection(Product p)
 	{
-		Iterator<Product> iter = Products.iterator();
+		Iterator<Product> iter = products.iterator();
 		ProductCollection toSuggest = new ProductCollection();
 		Product temp = new Product();
 		
@@ -207,7 +209,7 @@ public class ProductCollection {
 			try {
 				BufferedReader reader = new BufferedReader(new FileReader(filename));
 				String line;
-				ArrayList temp = new ArrayList();
+				ArrayList<Product> temp = new ArrayList<Product>();
 				
 				
 				while((line = reader.readLine()) != null)
@@ -219,7 +221,7 @@ public class ProductCollection {
 					
 				}
 				
-				Products = temp;
+				products = temp;
 				
 				reader.close();
 			} catch (IOException e) {
@@ -231,16 +233,30 @@ public class ProductCollection {
 	}
 		
 	//Method that allows us to write to a text file
-	public void toWrite(String fn)
+	public void toWrite()
 	{
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+			Iterator<Product> iter = products.iterator();
 			
+			while(iter.hasNext())
+			{
+				Product line = iter.next();
+				writer.write(line.getId() + "," + line.getName() + "," + line.getBrand() + "," + line.getCost() + "," + line.getInstrType() + "," + line.getQuantity() + "," + line.getImage() + "\n");
+			}
+			writer.close();
+	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 		
 	//To string method that converts this entire collection into a string
 	public String toString()
 	{
 		String toReturn = "";
-		Iterator<Product> iter = Products.iterator();
+		Iterator<Product> iter = products.iterator();
 		
 		while(iter.hasNext())
 		{
