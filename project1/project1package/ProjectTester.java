@@ -21,7 +21,7 @@ public class ProjectTester {
 		Product test7 = new Product("42", "Thick Gauge", "Fender", 12.0, "Strings", 2, "File Path");
 		Product test8 = new Product("58", "Tube Screamer", "Ibanez", 12.0, "Pedal", 2, "File Path");
 		Product test9 = new Product("44", "Metronome", "Boss", 12.0, "Metronome", 2, "File Path");
-		
+		Product test10 = new Product("23", "Studio", "Epiphone", 300.00, "Guitar", 2, "File path");
 		//Init our inventory collection class with no parameters
 		//ProductCollection myList = new ProductCollection();
 		
@@ -30,6 +30,8 @@ public class ProjectTester {
 		
 		//read from our txt file
 		myList.toRead();
+		
+		//Systematic approach of testing below that tests each method of collection class etc
 //
 //		
 //		//Check our getters
@@ -47,16 +49,17 @@ public class ProjectTester {
 //		myList.addInstrument(test7);
 //		myList.addInstrument(test8);
 //		myList.addInstrument(test9);
+//		myList.addInstrument(test10);
 //		
 //		
 //		//Print out the string representation of our collection
 //		System.out.println(myList.toString());
 //		
 //		//Print out an instrument found using its id
-//		System.out.println(myList.findInstrument("7"));
+//		System.out.println(myList.findInstrument("71"));
 //		
 //		//Delete a product according to its id
-//		myList.deleteProduct("71");
+//		myList.deleteProduct("23");
 //		
 //		//Finds a collection of items
 //		System.out.println(myList.retrieveCollection("Guitar"));
@@ -66,7 +69,10 @@ public class ProjectTester {
 //		
 //		//Give the method a product, and then return a list of products
 //		//that compliment that product
-//		System.out.println(myList.suggestCollection(test2));
+//		//works for every instrument that currently exists or may be added in the future
+//		//functioning on a guitar store for now that sells amps, guitars, pedals, drums
+//		//could just add woodwinds and reeds to inventory and it will suggest properly
+//		System.out.println(myList.suggestCollection(test4));
 //		
 //		//Print out the collection again including all changes
 //		System.out.println(myList.toString());

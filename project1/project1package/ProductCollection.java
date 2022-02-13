@@ -47,6 +47,9 @@ public class ProductCollection {
 		Iterator <Product> iter = products.iterator();
 		Product toReturn = new Product();
 		
+		//Show the product that was being searched for
+		System.out.println("The item you were looking for is directly below: ");
+		
 		while(iter.hasNext())
 		{
 			toReturn = iter.next();
@@ -61,6 +64,8 @@ public class ProductCollection {
 				}
 			
 		}
+		
+
 		
 		return toReturn;
 		
