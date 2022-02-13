@@ -1,3 +1,6 @@
+//Name: Dakota Varnell
+//Course: CS3381
+
 package project1package;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,14 +30,14 @@ public class ProjectTester {
 		
 		//read from our txt file
 		myList.toRead();
-
-		
-		//Check our getters
+//
+//		
+//		//Check our getters
 //		System.out.println(test.getId());
 //		System.out.println(test.getName());
 //		System.out.println(test.getBrand());
-		
-		//add all the products to the product collection myList manually
+//		
+//		//add all the products to the product collection myList manually for init testing
 //		myList.addInstrument(test);
 //		myList.addInstrument(test2);
 //		myList.addInstrument(test3);
@@ -45,28 +48,28 @@ public class ProjectTester {
 //		myList.addInstrument(test8);
 //		myList.addInstrument(test9);
 //		
-		
-		//Print out the string representation of our collection
-		System.out.println(myList.toString());
-		
-		//Print out an instrument found using its id
-		//System.out.println(myList.findInstrument("7"));
-		
-		//Delete a product according to its id
-		//myList.deleteProduct("71");
-		
-		//Finds a collection of items
-		//System.out.println(myList.retrieveCollection("Guitar"));
-		
-		//Decrease the quantity of an item (Purchase this item)
-		//myList.updateStatus("12");
-		
-		//Give the method a product, and then return a list of products
-		//that compliment that product
-		System.out.println(myList.suggestCollection(test2));
-		
-		//Print out the collection again including all changes
-		//System.out.println(myList.toString());
+//		
+//		//Print out the string representation of our collection
+//		System.out.println(myList.toString());
+//		
+//		//Print out an instrument found using its id
+//		System.out.println(myList.findInstrument("7"));
+//		
+//		//Delete a product according to its id
+//		myList.deleteProduct("71");
+//		
+//		//Finds a collection of items
+//		System.out.println(myList.retrieveCollection("Guitar"));
+//		
+//		//Decrease the quantity of an item (Purchase this item)
+//		myList.updateStatus("12");
+//		
+//		//Give the method a product, and then return a list of products
+//		//that compliment that product
+//		System.out.println(myList.suggestCollection(test2));
+//		
+//		//Print out the collection again including all changes
+//		System.out.println(myList.toString());
 		
 		//Print out the entire collection
 		System.out.println(myList.toString());

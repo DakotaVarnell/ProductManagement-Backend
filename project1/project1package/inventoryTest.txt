@@ -4,5 +4,4 @@
 49,Mustang,Fender,450.0,Amp,2,file location 
 58,Katana,Boss,300.0,Amp,5,file location 
 67,Thick Gauge,Fender,12.0,Strings,20,file location
-71,Thin Picks,Tortex,5.0,Picks,200,file location
 82,Metronome,Boss,70.0,Metronome,10,file location 

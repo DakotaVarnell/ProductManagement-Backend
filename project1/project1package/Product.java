@@ -1,3 +1,7 @@
+//Name: Dakota Varnell
+//Course: CS3381
+
+
 package project1package;
 
 public class Product{

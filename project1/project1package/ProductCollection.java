@@ -1,3 +1,6 @@
+//Name: Dakota Varnell
+//Course: CS3381
+
 package project1package;
 
 import java.io.BufferedReader;
@@ -40,6 +43,7 @@ public class ProductCollection {
 	//Find new instrument using inputted id
 	public Product findInstrument(String id)
 	{
+		//Iterator to traverse the collection
 		Iterator <Product> iter = products.iterator();
 		Product toReturn = new Product();
 		
@@ -65,6 +69,7 @@ public class ProductCollection {
 	//Update quantity of certain product by using inputted id as if one had been bought
 	public Product updateStatus(String id)
 	{
+		//Iterator to traverse the collection
 		Iterator <Product> iter = products.iterator();
 		Product toReturn = new Product();
 		
@@ -74,6 +79,7 @@ public class ProductCollection {
 			
 			if(toReturn.getId().equals(id))
 			{
+				//Decrement quantity by 1 of product
 				toReturn.setQuantity(toReturn.getQuantity()-1);
 			}
 		}
@@ -84,6 +90,7 @@ public class ProductCollection {
 	//Return a collection of products by the type of instrument
 	public ProductCollection retrieveCollection(String type)
 	{
+		//Iterator to traverse the collection
 		Iterator<Product> iter = products.iterator();
 		ProductCollection toReturn = new ProductCollection();
 		Product temp = new Product();
@@ -92,6 +99,8 @@ public class ProductCollection {
 		{
 			temp = iter.next();
 			
+			//add all products of a certain type to a new collection and return it
+			//Like a category
 			if(temp.getInstrType().equals(type))
 			{
 				toReturn.addInstrument(temp);
@@ -104,6 +113,7 @@ public class ProductCollection {
 	//delete an entire product as if it wasn't sold anymore
 	public void deleteProduct(String id)
 	{
+		//Iterator to traverse the collection
 		Iterator <Product> iter = products.iterator();
 		Product toRemove = new Product();
 		
@@ -123,6 +133,7 @@ public class ProductCollection {
 	//When the instrument or accessory is being bought, suggest a collection that they may also be interested in
 	public ProductCollection suggestCollection(Product p)
 	{
+		//Iterator to traverse the collection
 		Iterator<Product> iter = products.iterator();
 		ProductCollection toSuggest = new ProductCollection();
 		Product temp = new Product();
@@ -147,7 +158,7 @@ public class ProductCollection {
 		}
 		else if(p.getInstrType().equals("Amp"))
 		{
-			//If Amp, suggest cable
+			//If Amp, suggest cable or Pedal
 			while(iter.hasNext())
 			{
 				temp = iter.next();
@@ -205,7 +216,7 @@ public class ProductCollection {
 	public void toRead()
 	{
 		
-			
+			//Try catch that contains the buffered reader objects that allow reading of a file
 			try {
 				BufferedReader reader = new BufferedReader(new FileReader(filename));
 				String line;
@@ -215,12 +226,16 @@ public class ProductCollection {
 				while((line = reader.readLine()) != null)
 				{
 					//System.out.println(line);
+					//Tokenize each part of our line
 					String[] tokens = line.split(",");
+					//Set p equal to the information witin each line
 					Product p = new Product(tokens[0], tokens[1], tokens[2], Double.parseDouble(tokens[3]),tokens[4], Integer.parseInt(tokens[5]),tokens[6]);
+					//add p to the temp collection
 					temp.add(p);
 					
 				}
 				
+				//set the products collection equal to the temp
 				products = temp;
 				
 				reader.close();
@@ -235,13 +250,16 @@ public class ProductCollection {
 	//Method that allows us to write to a text file
 	public void toWrite()
 	{
+		//Try catch that contains our Buffered Writer objects
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 			Iterator<Product> iter = products.iterator();
 			
 			while(iter.hasNext())
 			{
+				//line = next product in collection
 				Product line = iter.next();
+				//Write to our text file the information contained in  our collection
 				writer.write(line.getId() + "," + line.getName() + "," + line.getBrand() + "," + line.getCost() + "," + line.getInstrType() + "," + line.getQuantity() + "," + line.getImage() + "\n");
 			}
 			writer.close();
