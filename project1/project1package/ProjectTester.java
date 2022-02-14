@@ -1,5 +1,6 @@
 //Name: Dakota Varnell
 //Course: CS3381
+//Project1
 
 package project1package;
 import java.util.ArrayList;
@@ -38,6 +39,19 @@ public class ProjectTester {
 //		System.out.println(test.getId());
 //		System.out.println(test.getName());
 //		System.out.println(test.getBrand());
+//		System.out.println(test.getCost());
+//		System.out.println(test.getInstrType());
+//		System.out.println(test.getQuantity());
+//		System.out.println(test.getImage());
+//		
+//		//Check our Setters
+//		test.setId("23");
+//		test.setName("Stratocaster");
+//		test.setBrand("Fender");
+//		test.setCost(300.0);
+//		test.setInstrType("Guitar");
+//		test.setQuantity(2);
+//		test.setImage("File Path");
 //		
 //		//add all the products to the product collection myList manually for init testing
 //		myList.addInstrument(test);
@@ -51,6 +65,9 @@ public class ProjectTester {
 //		myList.addInstrument(test9);
 //		myList.addInstrument(test10);
 //		
+//		
+//		//Check and see if one product is equal to another
+//		System.out.println(myList.equals("11"));
 //		
 //		//Print out the string representation of our collection
 //		System.out.println(myList.toString());

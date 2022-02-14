@@ -1,4 +1,5 @@
 //Name: Dakota Varnell
+//Project1
 //Course: CS3381
 
 package project1package;
@@ -39,6 +40,41 @@ public class ProductCollection {
 	{
 		products.add(p);
 	}
+	
+	public boolean equals(String id)
+	{
+		//I understand I could've used the equals method for a lot of my other methods, 
+		//but I didn't think to create one until now(2/14/22) bc everything is working fine
+		//and I didn't want to break anything by going back and changing it all now right before
+		//submission, but I plan on changing it before proj2, hope that illustrates why
+		//I didn't properly utilize a method of my own creation
+		
+		//Iterator to traverse the collection
+				Iterator <Product> iter = products.iterator();
+				Boolean toReturn = false;
+				Product toCompare = new Product();
+			
+				
+				while(iter.hasNext())
+				{
+					toCompare = iter.next();
+					
+						if(toCompare.getId().equals(id))
+						{
+							toReturn = true;
+							return toReturn;
+						}
+						else if(iter.hasNext() != true)
+						{
+								
+						}
+				}
+
+		
+		
+		return toReturn;
+	}
+	
 	
 	//Find new instrument using inputted id
 	public Product findInstrument(String id)
