@@ -5,6 +5,8 @@
 
 package project1package;
 
+import java.util.Iterator;
+
 public class Product{
 
 	private String id;
@@ -96,6 +98,28 @@ public class Product{
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+	
+	public boolean equals(String id)
+	{
+		//I understand I could've used the equals method for a lot of my other methods, 
+		//but I didn't think to create one until now(2/14/22) bc everything is working fine
+		//and I didn't want to break anything by going back and changing it all now right before
+		//submission, but I plan on changing it before proj2, hope that illustrates why
+		//I didn't properly utilize a method of my own creation
+		Boolean toReturn = false;
+		String CurrentId = this.getId();
+		
+		if(CurrentId.equals(id))
+		{
+			toReturn = true;
+			return toReturn;
+		}
+		else {
+			return toReturn;
+		}
+		
+		
 	}
 
 	

@@ -13,24 +13,25 @@ public class ProjectTester {
 	{
 		
 		//Add all of our tester products
-		Product test = new Product("22", "Stratocaster", "Fender", 222.0, "Guitar", 2, "File Path");
-		Product test2 = new Product("23", "Jazzmaster", "Fender", 300.0, "Guitar", 2, "File Path");
-		Product test3 = new Product("33", "Les Paul", "Gibson", 300.0, "Guitar", 2, "File Path");
-		Product test4 = new Product("38", "Blues Junior", "Fender", 400.0, "Amp", 2, "File Path");
-		Product test5 = new Product("36", "Katana", "Boss", 350.0, "Amp", 2, "File Path");
-		Product test6 = new Product("39", "Thin Picks", "Tortex", 7.0, "Pick", 2, "File Path");
-		Product test7 = new Product("42", "Thick Gauge", "Fender", 12.0, "Strings", 2, "File Path");
-		Product test8 = new Product("58", "Tube Screamer", "Ibanez", 12.0, "Pedal", 2, "File Path");
-		Product test9 = new Product("44", "Metronome", "Boss", 12.0, "Metronome", 2, "File Path");
-		Product test10 = new Product("23", "Studio", "Epiphone", 300.00, "Guitar", 2, "File path");
+//		Product test = new Product("22", "Stratocaster", "Fender", 222.0, "Guitar", 2, "File Path");
+//		Product test2 = new Product("23", "Jazzmaster", "Fender", 300.0, "Guitar", 2, "File Path");
+//		Product test3 = new Product("33", "Les Paul", "Gibson", 300.0, "Guitar", 2, "File Path");
+//		Product test4 = new Product("38", "Blues Junior", "Fender", 400.0, "Amp", 2, "File Path");
+//		Product test5 = new Product("36", "Katana", "Boss", 350.0, "Amp", 2, "File Path");
+//		Product test6 = new Product("39", "Thin Picks", "Tortex", 7.0, "Pick", 2, "File Path");
+//		Product test7 = new Product("42", "Thick Gauge", "Fender", 12.0, "Strings", 2, "File Path");
+//		Product test8 = new Product("58", "Tube Screamer", "Ibanez", 12.0, "Pedal", 2, "File Path");
+//		Product test9 = new Product("44", "Metronome", "Boss", 12.0, "Metronome", 2, "File Path");
+//		Product test10 = new Product("23", "Studio", "Epiphone", 300.00, "Guitar", 2, "File path");
 		//Init our inventory collection class with no parameters
 		//ProductCollection myList = new ProductCollection();
 		
 		//Init with our file name
-		ProductCollection myList = new ProductCollection("C:\\Users\\varne\\git\\Project1Repo\\project1\\project1package\\inventoryTest.txt");
+		ProductCollection myList = new ProductCollection("project1package/inventoryTest.txt");
 		
 		//read from our txt file
 		myList.toRead();
+		
 		
 		//Systematic approach of testing below that tests each method of collection class etc
 //
@@ -68,7 +69,7 @@ public class ProjectTester {
 //		
 //		//Check and see if one product is equal to another
 //		System.out.println(myList.equals("11"));
-//		
+//
 //		//Print out the string representation of our collection
 //		System.out.println(myList.toString());
 //		

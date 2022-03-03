@@ -41,41 +41,6 @@ public class ProductCollection {
 		products.add(p);
 	}
 	
-	public boolean equals(String id)
-	{
-		//I understand I could've used the equals method for a lot of my other methods, 
-		//but I didn't think to create one until now(2/14/22) bc everything is working fine
-		//and I didn't want to break anything by going back and changing it all now right before
-		//submission, but I plan on changing it before proj2, hope that illustrates why
-		//I didn't properly utilize a method of my own creation
-		
-		//Iterator to traverse the collection
-				Iterator <Product> iter = products.iterator();
-				Boolean toReturn = false;
-				Product toCompare = new Product();
-			
-				
-				while(iter.hasNext())
-				{
-					toCompare = iter.next();
-					
-						if(toCompare.getId().equals(id))
-						{
-							toReturn = true;
-							return toReturn;
-						}
-						else if(iter.hasNext() != true)
-						{
-								
-						}
-				}
-
-		
-		
-		return toReturn;
-	}
-	
-	
 	//Find new instrument using inputted id
 	public Product findInstrument(String id)
 	{
@@ -84,7 +49,7 @@ public class ProductCollection {
 		Product toReturn = new Product();
 		
 		//Show the product that was being searched for
-		System.out.println("The item you were looking for is directly below: ");
+		//System.out.println("The item you were looking for is directly below: ");
 		
 		while(iter.hasNext())
 		{
@@ -96,7 +61,7 @@ public class ProductCollection {
 				}
 				else if(iter.hasNext() != true)
 				{
-						System.out.println("Item not Found: ");
+						//System.out.println("Item not Found: ");
 				}
 			
 		}
@@ -180,8 +145,8 @@ public class ProductCollection {
 		Product temp = new Product();
 		
 		//Title Prompt to tell them what they are looking at
-		System.out.println("Since you enjoyed : " + p.getBrand() + " " + p.getName());
-		System.out.println("You might also like:");
+		//System.out.println("Since you enjoyed : " + p.getBrand() + " " + p.getName());
+		//System.out.println("You might also like:");
 		
 		//else if chain to determine the type of product that was purchased using input p
 		if(p.getInstrType().equals("Guitar"))
